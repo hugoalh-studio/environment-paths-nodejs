@@ -25,7 +25,7 @@ A NodeJS module to get the correct OS-specific absolute environment paths for th
 | Cache | `%LOCALAPPDATA%\{Name}\Cache` / `C:\Users\{Username}\AppData\Local\{Name}\Cache` | `~/Library/Caches/{Name}` | `$XDG_CACHE_HOME/{Name}` / `~/.cache/{Name}` |
 | Config | `%APPDATA%\{Name}\Config` / `C:\Users\{Username}\AppData\Roaming\{Name}\Config` | `~/Library/Preferences/{Name}` | `$XDG_CONFIG_HOME/{Name}` / `~/.config/{Name}` |
 | Data | `%LOCALAPPDATA%\{Name}\Data` / `C:\Users\{Username}\AppData\Local\{Name}\Data` | `~/Library/Application Support/{Name}` | `$XDG_DATA_HOME/{Name}` / `~/.local/share/{Name}` |
-| Download | `~\Downloads` / `C:\Users\{Username}\Downloads` | `~/Downloads` | `~/Downloads` |
+| Download | `~\Downloads` / `C:\Users\{Username}\Downloads\{Name}` | `~/Downloads/{Name}` | `~/Downloads/{Name}` |
 | Log | `%LOCALAPPDATA%\{Name}\Log` / `C:\Users\{Username}\AppData\Local\{Name}\Log` | `~/Library/Logs/{Name}` | `$XDG_STATE_HOME/{Name}` / `~/.local/state/{Name}` |
 | Temp | `%LOCALAPPDATA%\Temp\{Name}` / `C:\Users\{Username}\AppData\Local\Temp\{Name}` | `/var/folders/jf/f2twvvvs5jl_m49tf034ffpw0000gn/T/{Name}`\* | `/tmp/{Username}/{Name}` |
 
@@ -69,11 +69,17 @@ import environmentPaths from "@hugoalh/environment-paths";
 
 ```ts
 environmentPaths(name: string/* Application name.*/): {
-  cache: string,
-  config: string,
-  data: string,
-  download: string,
-  log: string,
-  temp: string
+  cache: string;
+  cacheRoot: string;
+  config: string;
+  configRoot: string;
+  data: string;
+  dataRoot: string;
+  download: string;
+  downloadRoot: string;
+  log: string;
+  logRoot: string;
+  temp: string;
+  tempRoot: string;
 }
 ```
