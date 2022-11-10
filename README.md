@@ -70,16 +70,10 @@ import environmentPaths from "@hugoalh/environment-paths";
 ```ts
 environmentPaths(name: string/* Application name.*/): {
   cache: string;
-  cacheRoot: string;
   config: string;
-  configRoot: string;
   data: string;
-  dataRoot: string;
   download: string;
-  downloadRoot: string;
   log: string;
-  logRoot: string;
   temp: string;
-  tempRoot: string;
 }
 ```
